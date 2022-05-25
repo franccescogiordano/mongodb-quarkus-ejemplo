@@ -20,7 +20,7 @@ public class MongoDbResource implements QuarkusTestResourceLifecycleManager {
         mongoContainer.waitingFor(new HostPortWaitStrategy()).start();
         Map<String, String> properties = new HashMap<>();
         properties.put("quarkus.mongodb.connection-string",
-                String.format("mongodb://%s:%d", mongoContainer.getHost(), mongoContainer.getMappedPort(MONGO_PORT)));
+                String.format("mongodb://%s:%d", mongoContainer.getHost()));
         return properties;
     }
 
